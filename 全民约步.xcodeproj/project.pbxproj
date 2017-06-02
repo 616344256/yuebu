@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CCD88D8D1EE1404100256015 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD88D8C1EE1404100256015 /* main.m */; };
+		CCD88D901EE1404100256015 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD88D8F1EE1404100256015 /* AppDelegate.m */; };
+		CCD88D931EE1404100256015 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD88D921EE1404100256015 /* ViewController.m */; };
+		CCD88D961EE1404100256015 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD88D941EE1404100256015 /* Main.storyboard */; };
+		CCD88D981EE1404100256015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCD88D971EE1404100256015 /* Assets.xcassets */; };
+		CCD88D9B1EE1404100256015 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD88D991EE1404100256015 /* LaunchScreen.storyboard */; };
+		CCD88DA61EE1404100256015 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD88DA51EE1404100256015 /* ____Tests.m */; };
+		CCD88DB11EE1404100256015 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD88DB01EE1404100256015 /* ____UITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CCD88DA21EE1404100256015 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCD88D801EE1404100256015 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCD88D871EE1404100256015;
+			remoteInfo = "全民约步";
+		};
+		CCD88DAD1EE1404100256015 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCD88D801EE1404100256015 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCD88D871EE1404100256015;
+			remoteInfo = "全民约步";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CCD88D881EE1404100256015 /* 全民约步.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "全民约步.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCD88D8C1EE1404100256015 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CCD88D8E1EE1404100256015 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CCD88D8F1EE1404100256015 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CCD88D911EE1404100256015 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CCD88D921EE1404100256015 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CCD88D951EE1404100256015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CCD88D971EE1404100256015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCD88D9A1EE1404100256015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CCD88D9C1EE1404100256015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCD88DA11EE1404100256015 /* 全民约步Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "全民约步Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCD88DA51EE1404100256015 /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
+		CCD88DA71EE1404100256015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCD88DAC1EE1404100256015 /* 全民约步UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "全民约步UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCD88DB01EE1404100256015 /* ____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____UITests.m"; sourceTree = "<group>"; };
+		CCD88DB21EE1404100256015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CCD88D851EE1404100256015 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCD88D9E1EE1404100256015 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCD88DA91EE1404100256015 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CCD88D7F1EE1404100256015 = {
+			isa = PBXGroup;
+			children = (
+				CCD88D8A1EE1404100256015 /* 全民约步 */,
+				CCD88DA41EE1404100256015 /* 全民约步Tests */,
+				CCD88DAF1EE1404100256015 /* 全民约步UITests */,
+				CCD88D891EE1404100256015 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CCD88D891EE1404100256015 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCD88D881EE1404100256015 /* 全民约步.app */,
+				CCD88DA11EE1404100256015 /* 全民约步Tests.xctest */,
+				CCD88DAC1EE1404100256015 /* 全民约步UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCD88D8A1EE1404100256015 /* 全民约步 */ = {
+			isa = PBXGroup;
+			children = (
+				CCD88D8E1EE1404100256015 /* AppDelegate.h */,
+				CCD88D8F1EE1404100256015 /* AppDelegate.m */,
+				CCD88D911EE1404100256015 /* ViewController.h */,
+				CCD88D921EE1404100256015 /* ViewController.m */,
+				CCD88D941EE1404100256015 /* Main.storyboard */,
+				CCD88D971EE1404100256015 /* Assets.xcassets */,
+				CCD88D991EE1404100256015 /* LaunchScreen.storyboard */,
+				CCD88D9C1EE1404100256015 /* Info.plist */,
+				CCD88D8B1EE1404100256015 /* Supporting Files */,
+			);
+			path = "全民约步";
+			sourceTree = "<group>";
+		};
+		CCD88D8B1EE1404100256015 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CCD88D8C1EE1404100256015 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CCD88DA41EE1404100256015 /* 全民约步Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CCD88DA51EE1404100256015 /* ____Tests.m */,
+				CCD88DA71EE1404100256015 /* Info.plist */,
+			);
+			path = "全民约步Tests";
+			sourceTree = "<group>";
+		};
+		CCD88DAF1EE1404100256015 /* 全民约步UITests */ = {
+			isa = PBXGroup;
+			children = (
+				CCD88DB01EE1404100256015 /* ____UITests.m */,
+				CCD88DB21EE1404100256015 /* Info.plist */,
+			);
+			path = "全民约步UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CCD88D871EE1404100256015 /* 全民约步 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCD88DB51EE1404100256015 /* Build configuration list for PBXNativeTarget "全民约步" */;
+			buildPhases = (
+				CCD88D841EE1404100256015 /* Sources */,
+				CCD88D851EE1404100256015 /* Frameworks */,
+				CCD88D861EE1404100256015 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "全民约步";
+			productName = "全民约步";
+			productReference = CCD88D881EE1404100256015 /* 全民约步.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CCD88DA01EE1404100256015 /* 全民约步Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCD88DB81EE1404100256015 /* Build configuration list for PBXNativeTarget "全民约步Tests" */;
+			buildPhases = (
+				CCD88D9D1EE1404100256015 /* Sources */,
+				CCD88D9E1EE1404100256015 /* Frameworks */,
+				CCD88D9F1EE1404100256015 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCD88DA31EE1404100256015 /* PBXTargetDependency */,
+			);
+			name = "全民约步Tests";
+			productName = "全民约步Tests";
+			productReference = CCD88DA11EE1404100256015 /* 全民约步Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CCD88DAB1EE1404100256015 /* 全民约步UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCD88DBB1EE1404100256015 /* Build configuration list for PBXNativeTarget "全民约步UITests" */;
+			buildPhases = (
+				CCD88DA81EE1404100256015 /* Sources */,
+				CCD88DA91EE1404100256015 /* Frameworks */,
+				CCD88DAA1EE1404100256015 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCD88DAE1EE1404100256015 /* PBXTargetDependency */,
+			);
+			name = "全民约步UITests";
+			productName = "全民约步UITests";
+			productReference = CCD88DAC1EE1404100256015 /* 全民约步UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CCD88D801EE1404100256015 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = chengwo;
+				TargetAttributes = {
+					CCD88D871EE1404100256015 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZEX7GKWE8Z;
+						ProvisioningStyle = Automatic;
+					};
+					CCD88DA01EE1404100256015 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZEX7GKWE8Z;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CCD88D871EE1404100256015;
+					};
+					CCD88DAB1EE1404100256015 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZEX7GKWE8Z;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CCD88D871EE1404100256015;
+					};
+				};
+			};
+			buildConfigurationList = CCD88D831EE1404100256015 /* Build configuration list for PBXProject "全民约步" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CCD88D7F1EE1404100256015;
+			productRefGroup = CCD88D891EE1404100256015 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CCD88D871EE1404100256015 /* 全民约步 */,
+				CCD88DA01EE1404100256015 /* 全民约步Tests */,
+				CCD88DAB1EE1404100256015 /* 全民约步UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CCD88D861EE1404100256015 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCD88D9B1EE1404100256015 /* LaunchScreen.storyboard in Resources */,
+				CCD88D981EE1404100256015 /* Assets.xcassets in Resources */,
+				CCD88D961EE1404100256015 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCD88D9F1EE1404100256015 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCD88DAA1EE1404100256015 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CCD88D841EE1404100256015 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCD88D931EE1404100256015 /* ViewController.m in Sources */,
+				CCD88D901EE1404100256015 /* AppDelegate.m in Sources */,
+				CCD88D8D1EE1404100256015 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCD88D9D1EE1404100256015 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCD88DA61EE1404100256015 /* ____Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCD88DA81EE1404100256015 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCD88DB11EE1404100256015 /* ____UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CCD88DA31EE1404100256015 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCD88D871EE1404100256015 /* 全民约步 */;
+			targetProxy = CCD88DA21EE1404100256015 /* PBXContainerItemProxy */;
+		};
+		CCD88DAE1EE1404100256015 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCD88D871EE1404100256015 /* 全民约步 */;
+			targetProxy = CCD88DAD1EE1404100256015 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CCD88D941EE1404100256015 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD88D951EE1404100256015 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CCD88D991EE1404100256015 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD88D9A1EE1404100256015 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CCD88DB31EE1404100256015 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CCD88DB41EE1404100256015 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CCD88DB61EE1404100256015 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZEX7GKWE8Z;
+				INFOPLIST_FILE = "全民约步/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chengwo.quanminyuebu.----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CCD88DB71EE1404100256015 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZEX7GKWE8Z;
+				INFOPLIST_FILE = "全民约步/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chengwo.quanminyuebu.----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CCD88DB91EE1404100256015 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZEX7GKWE8Z;
+				INFOPLIST_FILE = "全民约步Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chengwo.quanminyuebu.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/全民约步.app/全民约步";
+			};
+			name = Debug;
+		};
+		CCD88DBA1EE1404100256015 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = ZEX7GKWE8Z;
+				INFOPLIST_FILE = "全民约步Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chengwo.quanminyuebu.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/全民约步.app/全民约步";
+			};
+			name = Release;
+		};
+		CCD88DBC1EE1404100256015 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = ZEX7GKWE8Z;
+				INFOPLIST_FILE = "全民约步UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chengwo.quanminyuebu.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "全民约步";
+			};
+			name = Debug;
+		};
+		CCD88DBD1EE1404100256015 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = ZEX7GKWE8Z;
+				INFOPLIST_FILE = "全民约步UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chengwo.quanminyuebu.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "全民约步";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CCD88D831EE1404100256015 /* Build configuration list for PBXProject "全民约步" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCD88DB31EE1404100256015 /* Debug */,
+				CCD88DB41EE1404100256015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCD88DB51EE1404100256015 /* Build configuration list for PBXNativeTarget "全民约步" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCD88DB61EE1404100256015 /* Debug */,
+				CCD88DB71EE1404100256015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CCD88DB81EE1404100256015 /* Build configuration list for PBXNativeTarget "全民约步Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCD88DB91EE1404100256015 /* Debug */,
+				CCD88DBA1EE1404100256015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CCD88DBB1EE1404100256015 /* Build configuration list for PBXNativeTarget "全民约步UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCD88DBC1EE1404100256015 /* Debug */,
+				CCD88DBD1EE1404100256015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CCD88D801EE1404100256015 /* Project object */;
+}
