@@ -1,0 +1,59 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - AMap3DMap (4.6.1):
+    - AMapFoundation (~> 1.3)
+  - AMapFoundation (1.3.4)
+  - AMapLocation (2.3.1):
+    - AMapFoundation (~> 1.3)
+  - AMapNavi (2.3.0):
+    - AMap3DMap (~> 4.2)
+    - AMapFoundation (~> 1.2)
+  - AMapSearch (4.5.0):
+    - AMapFoundation (~> 1.2)
+  - IQKeyboardManager (4.0.8)
+  - MBProgressHUD (1.0.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - SlideMenuControllerOC (1.0.2)
+
+DEPENDENCIES:
+  - AFNetworking
+  - AMap3DMap
+  - AMapLocation
+  - AMapNavi
+  - AMapSearch
+  - IQKeyboardManager
+  - MBProgressHUD
+  - SDWebImage
+  - SlideMenuControllerOC
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AMap3DMap: eb6656fb441ed7eb310b3c121032e947d4d649e5
+  AMapFoundation: 486493b8e9ae4a1cb7ce2d8d8978ee1aabf9bb34
+  AMapLocation: 6016f0e09c127461c9c8e36945f34c0f037ad962
+  AMapNavi: 4f48c7b34275f80f3d14eff669ac739e0e190c1b
+  AMapSearch: 7a6ebc20a42e34a021b042b047f198082fc2fc30
+  IQKeyboardManager: 1a8189fa153bf09044355ee0ad36826f6767e7f7
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SlideMenuControllerOC: e5b1cdc1ff4e1c0eca58c0a64967ab25d95bf85f
+
+PODFILE CHECKSUM: 1f91b683c65682cd811b8b2a44c2fb53f31f1ba7
+
+COCOAPODS: 1.1.1
