@@ -11,6 +11,7 @@
 #import <AMapLocationKit/AMapLocationKit.h>
 #import "ChooseLocationViewController.h"
 #import <AFNetworking.h>
+#import "UIViewController+WeChatAndAliPayMethod.h"
 @interface sendRedPacketViewController ()<UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate,AMapLocationManagerDelegate>{
 
     BOOL isBack;
@@ -228,46 +229,70 @@
 //    [alertController addAction:archiveAction];
 //    [self presentViewController:alertController animated:YES completion:nil];
     
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
     
-    manager.requestSerializer=[AFHTTPRequestSerializer serializer];
-    // 拼接请求参数
-    NSDictionary *params = @{@"token":[[NSUserDefaults standardUserDefaults] valueForKey:@"User_token"],@"num":self.numTextField.text,@"money":self.moneyTextField.text,@"title":self.titleTextField.text,@"x":[NSString stringWithFormat:@"%f",self.sendLocation.coordinate.longitude],@"y":[NSString stringWithFormat:@"%f",self.sendLocation.coordinate.latitude],@"address":self.addressLabel.text};
-    [manager POST:@"http://yuebu.tcgqxx.com/api/hongbao/hongbao_add" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        
-        NSData *imageData =UIImageJPEGRepresentation(self.imageView.image,0.1);
-        
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        formatter.dateFormat =@"yyyyMMddHHmmss";
-        NSString *str = [formatter stringFromDate:[NSDate date]];
-        NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
-        
-        //上传的参数(上传图片，以文件流的格式)
-        [formData appendPartWithFileData:imageData
-                                    name:@"img"
-                                fileName:fileName
-                                mimeType:@"image/jpeg"];
-        
-    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@",responseObject);
-//        [self showMessage:[responseObject objectForKey:@"msg"]];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            if (isBack == NO) {
-               [self.navigationController popViewControllerAnimated:YES];
-                isBack = YES;
-            }
-           
-        });
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@",error);
-    }];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(weChatPayResultNoti:) name:WX_PAY_RESULT object:nil];
+    
+    [self payTheMoneyUseWeChatPayWithPrepay_id:@"12313456" nonce_str:@"156145644"];
+    
+    
+    
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    
+//    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+//    
+//    manager.requestSerializer=[AFHTTPRequestSerializer serializer];
+//    // 拼接请求参数
+//    NSDictionary *params = @{@"token":[[NSUserDefaults standardUserDefaults] valueForKey:@"User_token"],@"num":self.numTextField.text,@"money":self.moneyTextField.text,@"title":self.titleTextField.text,@"x":[NSString stringWithFormat:@"%f",self.sendLocation.coordinate.longitude],@"y":[NSString stringWithFormat:@"%f",self.sendLocation.coordinate.latitude],@"address":self.addressLabel.text};
+//    [manager POST:@"http://yuebu.tcgqxx.com/api/hongbao/hongbao_add" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+//        
+//        NSData *imageData =UIImageJPEGRepresentation(self.imageView.image,0.1);
+//        
+//        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//        formatter.dateFormat =@"yyyyMMddHHmmss";
+//        NSString *str = [formatter stringFromDate:[NSDate date]];
+//        NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
+//        
+//        //上传的参数(上传图片，以文件流的格式)
+//        [formData appendPartWithFileData:imageData
+//                                    name:@"img"
+//                                fileName:fileName
+//                                mimeType:@"image/jpeg"];
+//        
+//    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSLog(@"%@",responseObject);
+////        [self showMessage:[responseObject objectForKey:@"msg"]];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            
+//            if (isBack == NO) {
+//               [self.navigationController popViewControllerAnimated:YES];
+//                isBack = YES;
+//            }
+//           
+//        });
+//        
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        NSLog(@"%@",error);
+//    }];
     
 }
+
+
+-(void)weChatPayResultNoti:(NSNotification *)noti{
+    NSLog(@"%@",noti);
+    if ([[noti object] isEqualToString:IS_SUCCESSED]) {
+        [self showMessage:@"支付成功"];
+        
+    }else{
+        [self showMessage:@"支付失败"];
+    }
+    //上边添加了监听，这里记得移除
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:WX_PAY_RESULT object:nil];
+}
+
 
 -(void)mapBtnClick:(id)send{
 

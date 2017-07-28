@@ -9,4 +9,5 @@
   pod 'AMapSearch'
   pod 'AMapLocation'
   pod 'AMapNavi’
+  pod 'WechatOpenSDK'
   end

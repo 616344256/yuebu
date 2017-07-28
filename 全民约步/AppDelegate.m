@@ -77,6 +77,8 @@
     slideMenuController.delegate = mainVC;
     self.window.rootViewController = slideMenuController;
     [self.window makeKeyWindow];
+    
+    [WXApi registerApp:@"wxa578caef273d2a00"];
     return YES;
 }
 

@@ -30,6 +30,7 @@ PODS:
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - SlideMenuControllerOC (1.0.2)
+  - WechatOpenSDK (1.7.8)
 
 DEPENDENCIES:
   - AFNetworking
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - SDWebImage
   - SlideMenuControllerOC
+  - WechatOpenSDK
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -53,7 +55,8 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SlideMenuControllerOC: e5b1cdc1ff4e1c0eca58c0a64967ab25d95bf85f
+  WechatOpenSDK: ad1e7be1b66416df847ac50830c798b70c9e365e
 
-PODFILE CHECKSUM: 1f91b683c65682cd811b8b2a44c2fb53f31f1ba7
+PODFILE CHECKSUM: 5858595a714ac2f763afa89cec03ce2bc391d189
 
 COCOAPODS: 1.1.1

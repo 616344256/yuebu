@@ -13,6 +13,14 @@
 		CC3788271EF122650074BC0C /* LocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3788261EF122650074BC0C /* LocationTableViewCell.m */; };
 		CC3DCE291EE63F330011C3AC /* GetMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3DCE281EE63F330011C3AC /* GetMoneyViewController.m */; };
 		CC3DCE301EE656BC0011C3AC /* ComeRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3DCE2F1EE656BC0011C3AC /* ComeRunViewController.m */; };
+		CC4121791F2B18FE007A0DB3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4121781F2B18FE007A0DB3 /* SystemConfiguration.framework */; };
+		CC41217B1F2B1914007A0DB3 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CC41217A1F2B1914007A0DB3 /* libsqlite3.0.tbd */; };
+		CC41217D1F2B191B007A0DB3 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CC41217C1F2B191B007A0DB3 /* libc++.tbd */; };
+		CC41217F1F2B193D007A0DB3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC41217E1F2B193D007A0DB3 /* CoreTelephony.framework */; };
+		CC4121891F2B1A19007A0DB3 /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = CC4121821F2B1A19007A0DB3 /* ApiXml.mm */; };
+		CC41218A1F2B1A19007A0DB3 /* payRequsestHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = CC4121841F2B1A19007A0DB3 /* payRequsestHandler.mm */; };
+		CC41218B1F2B1A19007A0DB3 /* UIViewController+WeChatAndAliPayMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4121861F2B1A19007A0DB3 /* UIViewController+WeChatAndAliPayMethod.m */; };
+		CC41218C1F2B1A19007A0DB3 /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = CC4121881F2B1A19007A0DB3 /* WXUtil.mm */; };
 		CC4217E21EE79A970022EF9A /* IComeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4217E11EE79A970022EF9A /* IComeTableViewCell.m */; };
 		CC4217E51EE79AF70022EF9A /* IJoinTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4217E41EE79AF70022EF9A /* IJoinTableViewCell.m */; };
 		CC4217E81EE79B160022EF9A /* ISetUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4217E71EE79B160022EF9A /* ISetUpTableViewCell.m */; };
@@ -116,6 +124,18 @@
 		CC3DCE281EE63F330011C3AC /* GetMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetMoneyViewController.m; sourceTree = "<group>"; };
 		CC3DCE2E1EE656BC0011C3AC /* ComeRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComeRunViewController.h; sourceTree = "<group>"; };
 		CC3DCE2F1EE656BC0011C3AC /* ComeRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComeRunViewController.m; sourceTree = "<group>"; };
+		CC4121781F2B18FE007A0DB3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CC41217A1F2B1914007A0DB3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		CC41217C1F2B191B007A0DB3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		CC41217E1F2B193D007A0DB3 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		CC4121811F2B1A19007A0DB3 /* ApiXml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiXml.h; sourceTree = "<group>"; };
+		CC4121821F2B1A19007A0DB3 /* ApiXml.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ApiXml.mm; sourceTree = "<group>"; };
+		CC4121831F2B1A19007A0DB3 /* payRequsestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = payRequsestHandler.h; sourceTree = "<group>"; };
+		CC4121841F2B1A19007A0DB3 /* payRequsestHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = payRequsestHandler.mm; sourceTree = "<group>"; };
+		CC4121851F2B1A19007A0DB3 /* UIViewController+WeChatAndAliPayMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WeChatAndAliPayMethod.h"; sourceTree = "<group>"; };
+		CC4121861F2B1A19007A0DB3 /* UIViewController+WeChatAndAliPayMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WeChatAndAliPayMethod.m"; sourceTree = "<group>"; };
+		CC4121871F2B1A19007A0DB3 /* WXUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXUtil.h; sourceTree = "<group>"; };
+		CC4121881F2B1A19007A0DB3 /* WXUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WXUtil.mm; sourceTree = "<group>"; };
 		CC4217E01EE79A970022EF9A /* IComeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IComeTableViewCell.h; sourceTree = "<group>"; };
 		CC4217E11EE79A970022EF9A /* IComeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IComeTableViewCell.m; sourceTree = "<group>"; };
 		CC4217E31EE79AF70022EF9A /* IJoinTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJoinTableViewCell.h; sourceTree = "<group>"; };
@@ -239,10 +259,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC41217F1F2B193D007A0DB3 /* CoreTelephony.framework in Frameworks */,
+				CC41217D1F2B191B007A0DB3 /* libc++.tbd in Frameworks */,
+				CC41217B1F2B1914007A0DB3 /* libsqlite3.0.tbd in Frameworks */,
+				CC4D3CCD1EE94B4700910EC5 /* libz.tbd in Frameworks */,
+				CC4121791F2B18FE007A0DB3 /* SystemConfiguration.framework in Frameworks */,
 				CC4D3CD31EE94B5D00910EC5 /* libsqlite3.tbd in Frameworks */,
 				CC4D3CD11EE94B5400910EC5 /* JavaScriptCore.framework in Frameworks */,
 				CC4D3CCF1EE94B4F00910EC5 /* libstdc++.tbd in Frameworks */,
-				CC4D3CCD1EE94B4700910EC5 /* libz.tbd in Frameworks */,
 				CC4D3CCB1EE94B4200910EC5 /* libicucore.tbd in Frameworks */,
 				CC4D3CC71EE94B0600910EC5 /* MOBFoundation.framework in Frameworks */,
 				CC4D3CC41EE94B0600910EC5 /* WechatConnector.framework in Frameworks */,
@@ -372,6 +396,21 @@
 				CC4218101EE7E4D90022EF9A /* BalanceViewController.m */,
 			);
 			name = "余额明细";
+			sourceTree = "<group>";
+		};
+		CC4121801F2B1A19007A0DB3 /* WXPay */ = {
+			isa = PBXGroup;
+			children = (
+				CC4121811F2B1A19007A0DB3 /* ApiXml.h */,
+				CC4121821F2B1A19007A0DB3 /* ApiXml.mm */,
+				CC4121831F2B1A19007A0DB3 /* payRequsestHandler.h */,
+				CC4121841F2B1A19007A0DB3 /* payRequsestHandler.mm */,
+				CC4121851F2B1A19007A0DB3 /* UIViewController+WeChatAndAliPayMethod.h */,
+				CC4121861F2B1A19007A0DB3 /* UIViewController+WeChatAndAliPayMethod.m */,
+				CC4121871F2B1A19007A0DB3 /* WXUtil.h */,
+				CC4121881F2B1A19007A0DB3 /* WXUtil.mm */,
+			);
+			path = WXPay;
 			sourceTree = "<group>";
 		};
 		CC4217DF1EE79A6A0022EF9A /* cell */ = {
@@ -559,6 +598,7 @@
 		CC6663B81EE5235F00F25C56 /* 发红包 */ = {
 			isa = PBXGroup;
 			children = (
+				CC4121801F2B1A19007A0DB3 /* WXPay */,
 				CC6663B91EE5238200F25C56 /* sendRedPacketViewController.h */,
 				CC6663BA1EE5238200F25C56 /* sendRedPacketViewController.m */,
 				CC6663BC1EE5468100F25C56 /* ChooseLocationViewController.h */,
@@ -704,6 +744,10 @@
 		FF238F97A5C1A4CBBF624700 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC41217E1F2B193D007A0DB3 /* CoreTelephony.framework */,
+				CC41217C1F2B191B007A0DB3 /* libc++.tbd */,
+				CC41217A1F2B1914007A0DB3 /* libsqlite3.0.tbd */,
+				CC4121781F2B18FE007A0DB3 /* SystemConfiguration.framework */,
 				CC4D3CD21EE94B5D00910EC5 /* libsqlite3.tbd */,
 				CC4D3CD01EE94B5400910EC5 /* JavaScriptCore.framework */,
 				CC4D3CCE1EE94B4F00910EC5 /* libstdc++.tbd */,
@@ -947,10 +991,12 @@
 				CC4217E81EE79B160022EF9A /* ISetUpTableViewCell.m in Sources */,
 				CCD88D901EE1404100256015 /* AppDelegate.m in Sources */,
 				CCD88DCC1EE1464E00256015 /* SmartTableViewCell.m in Sources */,
+				CC41218B1F2B1A19007A0DB3 /* UIViewController+WeChatAndAliPayMethod.m in Sources */,
 				CC361F571EF2740B002F2992 /* WatchMemberCell.m in Sources */,
 				CCD88DFB1EE155F600256015 /* StepModel.m in Sources */,
 				CC6663AF1EE4E7B600F25C56 /* LeftTableViewCell.m in Sources */,
 				CC4217FF1EE7DF140022EF9A /* OpenRedPacketTableViewCell.m in Sources */,
+				CC41218A1F2B1A19007A0DB3 /* payRequsestHandler.mm in Sources */,
 				CC4217FB1EE7D62F0022EF9A /* RedPacketDetailsTableViewCell.m in Sources */,
 				CCD88DE31EE1489100256015 /* UIApplication+SlideMenuControllerOC.m in Sources */,
 				CC4217F01EE7A02A0022EF9A /* GetRedPacketTableViewCell.m in Sources */,
@@ -958,10 +1004,12 @@
 				CCD88DC91EE1464E00256015 /* BaseTableViewController.m in Sources */,
 				CCD88DE81EE1489100256015 /* UIView+SlideMenuController.m in Sources */,
 				CCD88D8D1EE1404100256015 /* main.m in Sources */,
+				CC41218C1F2B1A19007A0DB3 /* WXUtil.mm in Sources */,
 				CCD88DE61EE1489100256015 /* UIImageView+SlideMenuControllerOC.m in Sources */,
 				CC4D3C671EE8E4B500910EC5 /* WalkDetailsViewController.m in Sources */,
 				CCD88DE41EE1489100256015 /* UIColor+SlideMenuControllerOC.m in Sources */,
 				CC4217EC1EE7A0040022EF9A /* RedPacketRecordViewController.m in Sources */,
+				CC4121891F2B1A19007A0DB3 /* ApiXml.mm in Sources */,
 				CC3788271EF122650074BC0C /* LocationTableViewCell.m in Sources */,
 				CC4218111EE7E4D90022EF9A /* BalanceViewController.m in Sources */,
 			);
@@ -1114,6 +1162,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZEX7GKWE8Z;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/AMapFoundation",
@@ -1144,6 +1193,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZEX7GKWE8Z;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/AMapFoundation",
