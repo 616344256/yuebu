@@ -44,12 +44,12 @@
 #define IS_FAILED       @"wechat_pay_isFailed"
 
 
-#define APP_ID          @"wx99b92c523ee33db3"               //微信APPID
-#define APP_SECRET      @"693c75ded60fd0c877a293b025930a8a" //微信appsecret
+#define APP_ID          @"wxa578caef273d2a00"               //微信APPID
+#define APP_SECRET      @"d4866b72c4e0870a2644a84965a5ac8e" //微信appsecret
 //商户号，填写商户对应参数（客户给）
-#define MCH_ID          @"1269338001"
+#define MCH_ID          @"1482814232"
 //商户API密钥，填写相应参数（客户给）
-#define PARTNER_ID      @"vlu25z7a1jnjufz8l18hzd9olb7kmxjw"
+#define PARTNER_ID      @"2323aa8df2de6068638ea3cea7700d8c"
 //支付结果回调页面（后台会给你）
 #define NOTIFY_URL      @"http://211.144.126.107:8050/ttGroup/wxpay/order_notify_url"
 
