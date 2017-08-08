@@ -20,7 +20,7 @@
 #import "RedPacketsView.h"
 #import <AFNetworking.h>
 #import "CustomAnnotationView.h"
-
+#import "LoginViewController.h"
 @interface MainViewController ()<MAMapViewDelegate,AMapSearchDelegate,CustomCalloutViewDelegate>
 {
     NSTimer *_timer;
@@ -120,7 +120,7 @@
     //后台定位
     _mapView.pausesLocationUpdatesAutomatically = NO;
     
-    _mapView.allowsBackgroundLocationUpdates = NO;//iOS9以上系统必须配置
+    _mapView.allowsBackgroundLocationUpdates = YES;//iOS9以上系统必须配置
     [self.view addSubview:_mapView];
     
     self.gpsButton = [self makeGPSButtonView];

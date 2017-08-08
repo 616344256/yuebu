@@ -35,8 +35,9 @@
 
     self.weChatLabel = [[UILabel alloc]init];
     [weChatView addSubview:self.weChatLabel];
-    self.weChatLabel.frame = CGRectMake(150, 20, 100, 20);
-    self.weChatLabel.text = @"123456789";
+    self.weChatLabel.frame = CGRectMake(150, 20, 180, 20);
+    self.weChatLabel.text = @"确认后将提现到绑定微信";
+    self.weChatLabel.font = DEF_FontSize_16;
     self.weChatLabel.textColor = getColor(@"878787");
     
     

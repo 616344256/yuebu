@@ -173,14 +173,17 @@ updatingLocation:(BOOL)updatingLocation
 }
 
 - (void)returnButtonClicked:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)zoomButtonClicked:(id)sender
 {
-    self.callBackBlock(@{@"address":_lblMessage.text ,@"point":self.pointAnnotation});
-    [self.navigationController popViewControllerAnimated:YES];
-    
+    if (_lblMessage.text) {
+        self.callBackBlock(@{@"address":_lblMessage.text ,@"point":self.pointAnnotation});
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

@@ -16,7 +16,8 @@
 #import <ShareSDK/ShareSDK.h>
 #import <AFNetworking.h>
 #import "UIButton+WebCache.h"
-
+#import "TrajectoryViewController.h"
+#import "LoginViewController.h"
 @interface LeftViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property(nonatomic,strong)UIButton *headImgView;
@@ -46,6 +47,19 @@
         [manager2 POST:@"http://yuebu.tcgqxx.com/api/user/userinfo" parameters:params2 progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             self.moneyLabel.text = [NSString stringWithFormat:@"%@元",[[responseObject objectForKey:@"result"] objectForKey:@"money"]];
             [[NSUserDefaults standardUserDefaults] setObject:[[responseObject objectForKey:@"result"] objectForKey:@"money"] forKey:@"User_money"];
+            
+            self.nameLabel.text = [NSString stringWithFormat:@"%@",[[responseObject objectForKey:@"result"] objectForKey:@"nick_name"]];
+            
+            if ([[NSUserDefaults standardUserDefaults] valueForKey:@"User_name"]) {
+                self.nameLabel.hidden = NO;
+            }
+            
+            if ([[NSUserDefaults standardUserDefaults] valueForKey:@"User_money"]) {
+                self.moneyLabel.hidden = NO;
+            }
+            
+            [self.headImgView sd_setBackgroundImageWithURL:[[NSUserDefaults standardUserDefaults] valueForKey:@"User_img"] forState:UIControlStateNormal];
+            
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             
         }];
@@ -55,7 +69,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.dataArr = [NSMutableArray arrayWithObjects:@{@"img":@"谁来约步",@"name":@"谁来约步"},@{@"img":@"排行榜",@"name":@"排行榜"},@{@"img":@"红包记录",@"name":@"红包记录"},@{@"img":@"提现记录",@"name":@"提现记录"},@{@"img":@"余额明细",@"name":@"余额明细"},@{@"img":@"退出登录",@"name":@"退出登录"}, nil];
+    self.dataArr = [NSMutableArray arrayWithObjects:@{@"img":@"谁来约步",@"name":@"谁来约步"},@{@"img":@"排行榜",@"name":@"运动轨迹"},@{@"img":@"红包记录",@"name":@"红包记录"},@{@"img":@"提现记录",@"name":@"提现记录"},@{@"img":@"余额明细",@"name":@"余额明细"},@{@"img":@"退出登录",@"name":@"退出登录"}, nil];
     [self setHeadView];
     [self setTableView];
 }
@@ -154,7 +168,12 @@
             }
                 break;
             case 1:
-                
+            {
+
+                TrajectoryViewController *vc = [[TrajectoryViewController alloc]init];
+                vc.delegate = self;
+                [self.slideMenuController changeMainViewController:[[UINavigationController alloc] initWithRootViewController: vc] close:YES];
+            }
                 break;
             case 2:
             {
@@ -184,6 +203,7 @@
                 [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_name"];
                 [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_money"];
                 [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_img"];
+                [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_openid"];
                 [self showMessage:@"退出登录"];
                 [self.headImgView setBackgroundImage:[UIImage imageNamed:@"点击登录"] forState:UIControlStateNormal];
                 self.nameLabel.hidden = YES;
@@ -228,10 +248,15 @@
 #pragma mark - click
 
 -(void)moneyBtnClick:(id)send{
-    GetMoneyViewController *vc = [[GetMoneyViewController alloc]init];
-    vc.delegate = self;
-    [self.slideMenuController changeMainViewController:[[UINavigationController alloc] initWithRootViewController: vc] close:YES];
     
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"User_openid"]) {
+        GetMoneyViewController *vc = [[GetMoneyViewController alloc]init];
+        vc.delegate = self;
+        [self.slideMenuController changeMainViewController:[[UINavigationController alloc] initWithRootViewController: vc] close:YES];
+    }else{
+    
+        [self showMessage:@"请绑定微信提现"];
+    }
 }
 
 -(void)loginClick:(id)send{
@@ -239,52 +264,67 @@
     if ([[NSUserDefaults standardUserDefaults] valueForKey:@"User_token"]) {
         NSLog(@"%@",[[NSUserDefaults standardUserDefaults] valueForKey:@"User_token"]);
     }else{
-        //登录
-        [ShareSDK getUserInfo:SSDKPlatformTypeWechat
-               onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error)
-         {
-             if (state == SSDKResponseStateSuccess)
+        
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"weixin://"]]) {
+            //登录
+            [ShareSDK getUserInfo:SSDKPlatformTypeWechat
+                   onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error)
              {
-                 
-                 NSLog(@"uid=%@",[user.credential.rawData objectForKey:@"access_token"]);
-                 NSLog(@"%@",[user.credential.rawData objectForKey:@"unionid"]);
-                 NSLog(@"token=%@",[user.credential.rawData objectForKey:@"openid"]);
-                 
-                 AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-                 
-                 manager.responseSerializer = [AFJSONResponseSerializer serializer];
-                 
-                 manager.requestSerializer=[AFHTTPRequestSerializer serializer];
-                 // 拼接请求参数
-                 NSDictionary *params = @{@"type":@"1",@"access_token":[user.credential.rawData objectForKey:@"access_token"],@"unionid":[user.credential.rawData objectForKey:@"unionid"],@"openid":[user.credential.rawData objectForKey:@"openid"]};
-                 
-                 [manager POST:@"http://yuebu.tcgqxx.com/api/login/login" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                     NSLog(@"%@",responseObject);
-                     [self.headImgView sd_setBackgroundImageWithURL:[[responseObject objectForKey:@"data"] objectForKey:@"headimgurl"] forState:UIControlStateNormal];
-                     self.nameLabel.text = [[responseObject objectForKey:@"data"] objectForKey:@"nick_name"];
-                     self.moneyLabel.text = [NSString stringWithFormat:@"%@元",[[responseObject objectForKey:@"data"] objectForKey:@"money"]];
-                     self.nameLabel.hidden = NO;
-                     self.moneyLabel.hidden = NO;
-//                     self.headImgView.enabled = NO;
-                     [[NSUserDefaults standardUserDefaults] setObject:[[responseObject objectForKey:@"data"] objectForKey:@"nick_name"] forKey:@"User_name"];
+                 if (state == SSDKResponseStateSuccess)
+                 {
                      
-                     [[NSUserDefaults standardUserDefaults] setObject:[responseObject objectForKey:@"token"] forKey:@"User_token"];
+                     NSLog(@"uid=%@",[user.credential.rawData objectForKey:@"access_token"]);
+                     NSLog(@"%@",[user.credential.rawData objectForKey:@"unionid"]);
+                     NSLog(@"token=%@",[user.credential.rawData objectForKey:@"openid"]);
                      
-                     [[NSUserDefaults standardUserDefaults] setObject:[[responseObject objectForKey:@"data"] objectForKey:@"money"] forKey:@"User_money"];
+                     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
                      
-                     [[NSUserDefaults standardUserDefaults] setObject:[[responseObject objectForKey:@"data"] objectForKey:@"headimgurl"] forKey:@"User_img"];
+                     manager.responseSerializer = [AFJSONResponseSerializer serializer];
                      
-                 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                     manager.requestSerializer=[AFHTTPRequestSerializer serializer];
+                     // 拼接请求参数
+                     NSDictionary *params = @{@"type":@"1",@"access_token":[user.credential.rawData objectForKey:@"access_token"],@"unionid":[user.credential.rawData objectForKey:@"unionid"],@"openid":[user.credential.rawData objectForKey:@"openid"]};
+                     
+                     [manager POST:@"http://yuebu.tcgqxx.com/api/login/login" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                         NSLog(@"%@",responseObject);
+                         [self.headImgView sd_setBackgroundImageWithURL:[[responseObject objectForKey:@"data"] objectForKey:@"headimgurl"] forState:UIControlStateNormal];
+                         self.nameLabel.text = [[responseObject objectForKey:@"data"] objectForKey:@"nick_name"];
+                         self.moneyLabel.text = [NSString stringWithFormat:@"%@元",[[responseObject objectForKey:@"data"] objectForKey:@"money"]];
+                         self.nameLabel.hidden = NO;
+                         self.moneyLabel.hidden = NO;
+                         //                     self.headImgView.enabled = NO;
+                         [[NSUserDefaults standardUserDefaults] setObject:[[responseObject objectForKey:@"data"] objectForKey:@"nick_name"] forKey:@"User_name"];
+                         
+                         [[NSUserDefaults standardUserDefaults] setObject:[responseObject objectForKey:@"token"] forKey:@"User_token"];
+                         
+                         [[NSUserDefaults standardUserDefaults] setObject:[user.credential.rawData objectForKey:@"openid"] forKey:@"User_openid"];
+                         
+                         [[NSUserDefaults standardUserDefaults] setObject:[[responseObject objectForKey:@"data"] objectForKey:@"money"] forKey:@"User_money"];
+                         
+                         [[NSUserDefaults standardUserDefaults] setObject:[[responseObject objectForKey:@"data"] objectForKey:@"headimgurl"] forKey:@"User_img"];
+                         
+                     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                         NSLog(@"%@",error);
+                     }];
+                 }
+                 
+                 else
+                 {
                      NSLog(@"%@",error);
-                 }];
-             }
-             
-             else
-             {
-                 NSLog(@"%@",error);
-             }
-             
-         }];
+                 }
+                 
+             }];
+        }else{
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            LoginViewController *vc = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([LoginViewController class])];
+            
+            vc.delegate = self;
+            [self.slideMenuController changeMainViewController:[[UINavigationController alloc] initWithRootViewController: vc] close:YES];
+            
+        }
+        
+        
+        
     }
     
 }

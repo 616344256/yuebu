@@ -17,7 +17,7 @@
 #import "WXApi.h"
 #import <IQKeyboardManager.h>
 #import "MMPDeepSleepPreventer.h"
-@interface AppDelegate ()
+@interface AppDelegate ()<WXApiDelegate>
 
 @end
 
@@ -34,7 +34,7 @@
      *  在此事件中写入连接代码。第四个参数则为配置本地社交平台时触发，根据返回的平台类型来配置平台信息。
      *  如果您使用的时服务端托管平台信息时，第二、四项参数可以传入nil，第三项参数则根据服务端托管平台来决定要连接的社交SDK。
      */
-    [ShareSDK registerApp:@"1e885fa3e7cda"
+    [ShareSDK registerApp:@"1fd54692d2d28"
      
           activePlatforms:@[@(SSDKPlatformTypeWechat)]
                  onImport:^(SSDKPlatformType platformType)
@@ -83,6 +83,37 @@
 }
 
 
+//微信SDK自带的方法，处理从微信客户端完成操作后返回程序之后的回调方法
+-(void) onResp:(BaseResp*)resp
+{
+    //这里判断回调信息是否为 支付
+    if([resp isKindOfClass:[PayResp class]]){
+        switch (resp.errCode) {
+            case WXSuccess:
+                //如果支付成功的话，全局发送一个通知，支付成功
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"weixin_pay_result" object:@"成功"];
+                break;
+                
+            default:
+                //如果支付失败的话，全局发送一个通知，支付失败
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"weixin_pay_result" object:@"失败"];
+                break;
+        }
+    }
+}
+
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
+{
+    //这里判断是否发起的请求为微信支付，如果是的话，用WXApi的方法调起微信客户端的支付页面（://pay 之前的那串字符串就是你的APPID，）
+    if ([[NSString stringWithFormat:@"%@",url] rangeOfString:[NSString stringWithFormat:@"%@://pay",@"wxa578caef273d2a00"]].location != NSNotFound) {
+        return  [WXApi handleOpenURL:url delegate:self];
+        //不是上面的情况的话，就正常用shareSDK调起相应的分享页面
+    }
+    return YES;
+    
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -100,7 +131,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     //播放一段无声音乐,避免被kill
-    [[MMPDeepSleepPreventer sharedSingleton] startPreventSleep];
+//    [[MMPDeepSleepPreventer sharedSingleton] startPreventSleep];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

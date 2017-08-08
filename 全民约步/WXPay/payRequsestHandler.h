@@ -50,8 +50,18 @@
 #define MCH_ID          @"1482814232"
 //商户API密钥，填写相应参数（客户给）
 #define PARTNER_ID      @"2323aa8df2de6068638ea3cea7700d8c"
+
+
+//#define APP_ID          @"wx6a5cf55dbfc8d0c8"               //微信APPID
+//#define APP_SECRET      @"0f556419b95aa3b01e7ee85ce2f8dd0f" //微信appsecret
+////商户号，填写商户对应参数（客户给）
+//#define MCH_ID          @"1429472002"
+////商户API密钥，填写相应参数（客户给）
+//#define PARTNER_ID      @"zhankeweixinvideo2011qxdq0000000"
+
+
 //支付结果回调页面（后台会给你）
-#define NOTIFY_URL      @"http://211.144.126.107:8050/ttGroup/wxpay/order_notify_url"
+#define NOTIFY_URL      @"http://yuebu.tcgqxx.com/api/hongbaozhifu/notify_url"
 
 @interface payRequsestHandler : NSObject{
 	//预支付网关url地址

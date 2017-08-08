@@ -12,6 +12,9 @@
 #import "ChooseLocationViewController.h"
 #import <AFNetworking.h>
 #import "UIViewController+WeChatAndAliPayMethod.h"
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKUI/ShareSDK+SSUI.h>
+
 @interface sendRedPacketViewController ()<UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate,AMapLocationManagerDelegate>{
 
     BOOL isBack;
@@ -170,7 +173,7 @@
     [shareButton setTitle:@"分享到朋友圈" forState:UIControlStateNormal];
     [shareButton setTitleColor:getColor(@"4ca6ef") forState:UIControlStateNormal];
     [mapView addSubview:shareButton];
-    
+    [shareButton addTarget:self action:@selector(shareBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *mapBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [mapView addSubview:mapBtn];
@@ -192,6 +195,56 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma  mark - click
+
+-(void)shareBtnClick:(id)send{
+
+    NSArray* imageArray = @[[UIImage imageNamed:@"icon"]];
+    //（注意：图片必须要在Xcode左边目录里面，名称必须要传正确，如果要分享网络图片，可以这样传iamge参数 images:@[@"http://mob.com/Assets/images/logo.png?v=20150320"]）
+    if (imageArray) {
+        
+        NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
+        [shareParams SSDKSetupShareParamsByText:@"来一起约步抢红包吧"
+                                         images:imageArray
+                                            url:[NSURL URLWithString:@"http://www.baidu.com"]
+                                          title:@"一起约步"
+                                           type:SSDKContentTypeAuto];
+        //有的平台要客户端分享需要加此方法，例如微博
+        [shareParams SSDKEnableUseClientShare];
+        //2、分享（可以弹出我们的分享菜单和编辑界面）
+        [ShareSDK showShareActionSheet:nil //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响
+                                 items:@[
+                                         @(SSDKPlatformTypeWechat)
+                                         ]
+                           shareParams:shareParams
+                   onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
+                       
+                       switch (state) {
+                           case SSDKResponseStateSuccess:
+                           {
+                               UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"分享成功"
+                                                                                   message:nil
+                                                                                  delegate:nil
+                                                                         cancelButtonTitle:@"确定"
+                                                                         otherButtonTitles:nil];
+                               [alertView show];
+                               break;
+                           }
+                           case SSDKResponseStateFail:
+                           {
+                               UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享失败"
+                                                                               message:[NSString stringWithFormat:@"%@",error]
+                                                                              delegate:nil
+                                                                     cancelButtonTitle:@"OK"
+                                                                     otherButtonTitles:nil, nil];
+                               [alert show];
+                               break;
+                           }
+                           default:
+                               break;
+                       }
+                   }
+         ];}
+}
 
 -(void)sendBtnClick:(id)send{
     if ([self.numTextField.text isEqual:@""]) {
@@ -218,79 +271,157 @@
         [self showMessage:@"请选择红包地址"];
         return;
     }
-    self.sendBtn.enabled = NO;
+   
     
-//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"支付方式" message:@"请选择支付方式" preferredStyle: UIAlertControllerStyleActionSheet];
-//    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"微信支付" style:UIAlertActionStyleCancel handler:nil];
-//    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"支付宝支付" style:UIAlertActionStyleDestructive handler:nil];
-//    UIAlertAction *archiveAction = [UIAlertAction actionWithTitle:@"零钱支付" style:UIAlertActionStyleDefault handler:nil];
-//    [alertController addAction:cancelAction];
-//    [alertController addAction:deleteAction];
-//    [alertController addAction:archiveAction];
-//    [self presentViewController:alertController animated:YES completion:nil];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+
+    manager.requestSerializer=[AFHTTPRequestSerializer serializer];
     
-    
-    
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(weChatPayResultNoti:) name:WX_PAY_RESULT object:nil];
-    
-    [self payTheMoneyUseWeChatPayWithPrepay_id:@"12313456" nonce_str:@"156145644"];
-    
-    
-    
-//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    
-//    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-//    
-//    manager.requestSerializer=[AFHTTPRequestSerializer serializer];
-//    // 拼接请求参数
-//    NSDictionary *params = @{@"token":[[NSUserDefaults standardUserDefaults] valueForKey:@"User_token"],@"num":self.numTextField.text,@"money":self.moneyTextField.text,@"title":self.titleTextField.text,@"x":[NSString stringWithFormat:@"%f",self.sendLocation.coordinate.longitude],@"y":[NSString stringWithFormat:@"%f",self.sendLocation.coordinate.latitude],@"address":self.addressLabel.text};
-//    [manager POST:@"http://yuebu.tcgqxx.com/api/hongbao/hongbao_add" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-//        
-//        NSData *imageData =UIImageJPEGRepresentation(self.imageView.image,0.1);
-//        
-//        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//        formatter.dateFormat =@"yyyyMMddHHmmss";
-//        NSString *str = [formatter stringFromDate:[NSDate date]];
-//        NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
-//        
-//        //上传的参数(上传图片，以文件流的格式)
-//        [formData appendPartWithFileData:imageData
-//                                    name:@"img"
-//                                fileName:fileName
-//                                mimeType:@"image/jpeg"];
-//        
-//    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@"%@",responseObject);
-////        [self showMessage:[responseObject objectForKey:@"msg"]];
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            
-//            if (isBack == NO) {
-//               [self.navigationController popViewControllerAnimated:YES];
-//                isBack = YES;
-//            }
-//           
-//        });
-//        
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        NSLog(@"%@",error);
-//    }];
+    NSString *urlStr = [NSString stringWithFormat:@"http://yuebu.tcgqxx.com/api/hongbaozhifu/zhifu?orderBody=%@&total_fee=%@&token=%@&openid=%@",self.titleTextField.text,self.moneyTextField.text,[[NSUserDefaults standardUserDefaults] valueForKey:@"User_token"],[[NSUserDefaults standardUserDefaults] valueForKey:@"User_openid"]];
+    NSLog(@"%@",urlStr);
+    NSString *utf = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [manager GET:utf parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        
+
+        if ([[responseObject objectForKey:@"msg"] isEqualToString:@"支付成功"]) {
+            self.sendBtn.enabled = NO;
+//            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(weChatPayResultNoti:) name:WX_PAY_RESULT object:nil];
+            
+            
+            if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"weixin://"]]) {
+                [self payTheMoneyUseWeChatPayWithPrepay_id:[[responseObject objectForKey:@"result"] objectForKey:@"prepayid"] nonce_str:[[responseObject objectForKey:@"result"] objectForKey:@"noncestr"]];
+            }else{
+            
+                AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+                
+                manager.responseSerializer = [AFJSONResponseSerializer serializer];
+                
+                manager.requestSerializer=[AFHTTPRequestSerializer serializer];
+                // 拼接请求参数
+                NSDictionary *params = @{@"token":[[NSUserDefaults standardUserDefaults] valueForKey:@"User_token"],@"num":self.numTextField.text,@"money":self.moneyTextField.text,@"title":self.titleTextField.text,@"x":[NSString stringWithFormat:@"%f",self.sendLocation.coordinate.longitude],@"y":[NSString stringWithFormat:@"%f",self.sendLocation.coordinate.latitude],@"address":self.addressLabel.text};
+                [manager POST:@"http://yuebu.tcgqxx.com/api/hongbao/hongbao_add" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+                    
+                    NSData *imageData =UIImageJPEGRepresentation(self.imageView.image,0.1);
+                    
+                    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                    formatter.dateFormat =@"yyyyMMddHHmmss";
+                    NSString *str = [formatter stringFromDate:[NSDate date]];
+                    NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
+                    
+                    //上传的参数(上传图片，以文件流的格式)
+                    [formData appendPartWithFileData:imageData
+                                                name:@"img"
+                                            fileName:fileName
+                                            mimeType:@"image/jpeg"];
+                    
+                } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                    NSLog(@"%@",responseObject);
+                    [self showMessage:[responseObject objectForKey:@"msg"]];
+                    if ([[responseObject objectForKey:@"status"] integerValue]== 1) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            
+                            if (isBack == NO) {
+                                [self.navigationController popViewControllerAnimated:YES];
+                                isBack = YES;
+                            }
+                            
+                        });
+                    }else{
+                        self.sendBtn.enabled = YES;
+                        //UIAlertController风格：UIAlertControllerStyleAlert
+                        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"没有标题的标题"
+                                                                                                 message:[responseObject objectForKey:@"msg"]
+                                                                                          preferredStyle:UIAlertControllerStyleAlert ];
+                        
+                        UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+                        [alertController addAction:OKAction];
+                        
+                        [self presentViewController:alertController animated:YES completion:nil];
+                        
+                    }
+                    
+                    
+                } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                    NSLog(@"%@",error);
+                }];
+            }
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+    }];
     
 }
 
 
--(void)weChatPayResultNoti:(NSNotification *)noti{
+-(void)noti:(NSNotification *)noti{
     NSLog(@"%@",noti);
-    if ([[noti object] isEqualToString:IS_SUCCESSED]) {
+    if ([[noti object] isEqualToString:@"成功"]) {
         [self showMessage:@"支付成功"];
+        
+        
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        
+        manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+        manager.requestSerializer=[AFHTTPRequestSerializer serializer];
+        // 拼接请求参数
+        NSDictionary *params = @{@"token":[[NSUserDefaults standardUserDefaults] valueForKey:@"User_token"],@"num":self.numTextField.text,@"money":self.moneyTextField.text,@"title":self.titleTextField.text,@"x":[NSString stringWithFormat:@"%f",self.sendLocation.coordinate.longitude],@"y":[NSString stringWithFormat:@"%f",self.sendLocation.coordinate.latitude],@"address":self.addressLabel.text};
+        [manager POST:@"http://yuebu.tcgqxx.com/api/hongbao/hongbao_add" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    
+            NSData *imageData =UIImageJPEGRepresentation(self.imageView.image,0.1);
+    
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            formatter.dateFormat =@"yyyyMMddHHmmss";
+            NSString *str = [formatter stringFromDate:[NSDate date]];
+            NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
+    
+            //上传的参数(上传图片，以文件流的格式)
+            [formData appendPartWithFileData:imageData
+                                        name:@"img"
+                                    fileName:fileName
+                                    mimeType:@"image/jpeg"];
+    
+        } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"%@",responseObject);
+            
+            if ([[responseObject objectForKey:@"status"] integerValue]== 1) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    if (isBack == NO) {
+                        [self.navigationController popViewControllerAnimated:YES];
+                        isBack = YES;
+                    }
+                    
+                });
+            }else{
+                self.sendBtn.enabled = YES;
+                //UIAlertController风格：UIAlertControllerStyleAlert
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"没有标题的标题"
+                                                                                         message:[responseObject objectForKey:@"msg"]
+                                                                                  preferredStyle:UIAlertControllerStyleAlert ];
+                
+                UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+                [alertController addAction:OKAction];
+                
+                [self presentViewController:alertController animated:YES completion:nil];
+        
+            }
+            
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"%@",error);
+        }];
         
     }else{
         [self showMessage:@"支付失败"];
+        self.sendBtn.enabled = YES;
     }
-    //上边添加了监听，这里记得移除
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:WX_PAY_RESULT object:nil];
+//    //上边添加了监听，这里记得移除
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:WX_PAY_RESULT object:nil];
 }
 
 

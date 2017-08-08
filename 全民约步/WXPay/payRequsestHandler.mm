@@ -169,7 +169,7 @@
     [packageParams setObject: @"APP"            forKey:@"trade_type"];  //支付类型，固定为APP
     [packageParams setObject: order_name        forKey:@"body"];        //订单描述，展示给用户
 
-    [packageParams setObject: NOTIFY_URL        forKey:@"notify_url"];  //支付结果异步通知
+    [packageParams setObject: [NSString stringWithFormat:@"%@",NOTIFY_URL]        forKey:@"notify_url"];  //支付结果异步通知
 
     
     [packageParams setObject: orderno           forKey:@"out_trade_no"];//商户订单号

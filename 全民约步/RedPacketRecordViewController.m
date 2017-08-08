@@ -41,7 +41,6 @@
     self.shouArr = [[NSMutableArray alloc]init];
     self.faArr = [[NSMutableArray alloc]init];
     [self AFNetWorking];
-
     [self setBtn];
     [self setScrollView];
     [self setTableView];
@@ -81,6 +80,8 @@
             putMoney = [[responseObject objectForKey:@"result"] objectForKey:@"total"];
             self.faArr = [[responseObject objectForKey:@"result"] objectForKey:@"data"];
             [self.secTableView reloadData];
+        }else{
+            putMoney = @"0";
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

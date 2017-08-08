@@ -55,6 +55,8 @@
 		CC4D3CCF1EE94B4F00910EC5 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4D3CCE1EE94B4F00910EC5 /* libstdc++.tbd */; };
 		CC4D3CD11EE94B5400910EC5 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4D3CD01EE94B5400910EC5 /* JavaScriptCore.framework */; };
 		CC4D3CD31EE94B5D00910EC5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4D3CD21EE94B5D00910EC5 /* libsqlite3.tbd */; };
+		CC50198E1F3400E100C8E5A8 /* TrajectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC50198D1F3400E100C8E5A8 /* TrajectoryViewController.m */; };
+		CC5019911F34063700C8E5A8 /* UserLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5019901F34063700C8E5A8 /* UserLocation.m */; };
 		CC6663AF1EE4E7B600F25C56 /* LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6663AE1EE4E7B600F25C56 /* LeftTableViewCell.m */; };
 		CC6663B11EE5089B00F25C56 /* AMapFoundationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6663B01EE5089B00F25C56 /* AMapFoundationKit.framework */; };
 		CC6663B31EE508A500F25C56 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6663B21EE508A500F25C56 /* MAMapKit.framework */; };
@@ -62,6 +64,8 @@
 		CC6663B71EE508B900F25C56 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6663B61EE508B900F25C56 /* AMapSearchKit.framework */; };
 		CC6663BB1EE5238200F25C56 /* sendRedPacketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6663BA1EE5238200F25C56 /* sendRedPacketViewController.m */; };
 		CC6663BE1EE5468100F25C56 /* ChooseLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6663BD1EE5468100F25C56 /* ChooseLocationViewController.m */; };
+		CC92ECFC1F380D6300A63458 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92ECF91F380D6300A63458 /* LoginViewController.m */; };
+		CC92ECFD1F380D6300A63458 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92ECFB1F380D6300A63458 /* RegistViewController.m */; };
 		CCD88D8D1EE1404100256015 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD88D8C1EE1404100256015 /* main.m */; };
 		CCD88D901EE1404100256015 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD88D8F1EE1404100256015 /* AppDelegate.m */; };
 		CCD88D931EE1404100256015 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD88D921EE1404100256015 /* ViewController.m */; };
@@ -191,6 +195,10 @@
 		CC4D3CCE1EE94B4F00910EC5 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		CC4D3CD01EE94B5400910EC5 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		CC4D3CD21EE94B5D00910EC5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		CC50198C1F3400E100C8E5A8 /* TrajectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajectoryViewController.h; sourceTree = "<group>"; };
+		CC50198D1F3400E100C8E5A8 /* TrajectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajectoryViewController.m; sourceTree = "<group>"; };
+		CC50198F1F34063700C8E5A8 /* UserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLocation.h; sourceTree = "<group>"; };
+		CC5019901F34063700C8E5A8 /* UserLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLocation.m; sourceTree = "<group>"; };
 		CC6663AD1EE4E7B600F25C56 /* LeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewCell.h; sourceTree = "<group>"; };
 		CC6663AE1EE4E7B600F25C56 /* LeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewCell.m; sourceTree = "<group>"; };
 		CC6663B01EE5089B00F25C56 /* AMapFoundationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapFoundationKit.framework; path = Pods/AMapFoundation/AMapFoundationKit.framework; sourceTree = "<group>"; };
@@ -201,6 +209,10 @@
 		CC6663BA1EE5238200F25C56 /* sendRedPacketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sendRedPacketViewController.m; sourceTree = "<group>"; };
 		CC6663BC1EE5468100F25C56 /* ChooseLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLocationViewController.h; sourceTree = "<group>"; };
 		CC6663BD1EE5468100F25C56 /* ChooseLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLocationViewController.m; sourceTree = "<group>"; };
+		CC92ECF81F380D6300A63458 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CC92ECF91F380D6300A63458 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		CC92ECFA1F380D6300A63458 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
+		CC92ECFB1F380D6300A63458 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		CCD88D881EE1404100256015 /* 全民约步.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "全民约步.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD88D8C1EE1404100256015 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCD88D8E1EE1404100256015 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -343,6 +355,8 @@
 		CC3DCE261EE63E290011C3AC /* 侧拉 */ = {
 			isa = PBXGroup;
 			children = (
+				CC92ECF71F380D1700A63458 /* 登录注册 */,
+				CC50198B1F34009700C8E5A8 /* 轨迹 */,
 				CC4217E91EE79FDF0022EF9A /* 红包记录 */,
 				CC3DCE321EE659C20011C3AC /* 余额明细 */,
 				CC3DCE311EE659BB0011C3AC /* 提现记录 */,
@@ -595,6 +609,17 @@
 			path = Required;
 			sourceTree = "<group>";
 		};
+		CC50198B1F34009700C8E5A8 /* 轨迹 */ = {
+			isa = PBXGroup;
+			children = (
+				CC50198C1F3400E100C8E5A8 /* TrajectoryViewController.h */,
+				CC50198D1F3400E100C8E5A8 /* TrajectoryViewController.m */,
+				CC50198F1F34063700C8E5A8 /* UserLocation.h */,
+				CC5019901F34063700C8E5A8 /* UserLocation.m */,
+			);
+			name = "轨迹";
+			sourceTree = "<group>";
+		};
 		CC6663B81EE5235F00F25C56 /* 发红包 */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,6 +630,17 @@
 				CC6663BD1EE5468100F25C56 /* ChooseLocationViewController.m */,
 			);
 			name = "发红包";
+			sourceTree = "<group>";
+		};
+		CC92ECF71F380D1700A63458 /* 登录注册 */ = {
+			isa = PBXGroup;
+			children = (
+				CC92ECF81F380D6300A63458 /* LoginViewController.h */,
+				CC92ECF91F380D6300A63458 /* LoginViewController.m */,
+				CC92ECFA1F380D6300A63458 /* RegistViewController.h */,
+				CC92ECFB1F380D6300A63458 /* RegistViewController.m */,
+			);
+			name = "登录注册";
 			sourceTree = "<group>";
 		};
 		CCD88D7F1EE1404100256015 = {
@@ -974,6 +1010,8 @@
 				CC6663BE1EE5468100F25C56 /* ChooseLocationViewController.m in Sources */,
 				CC3788241EF1144C0074BC0C /* NewYueBuViewController.m in Sources */,
 				CCD88DE51EE1489100256015 /* UIImage+SlideMenuController.m in Sources */,
+				CC50198E1F3400E100C8E5A8 /* TrajectoryViewController.m in Sources */,
+				CC5019911F34063700C8E5A8 /* UserLocation.m in Sources */,
 				CCF42DE21EEFD8D100FF3CD4 /* RedPacketsView.m in Sources */,
 				CCD88DFA1EE155F600256015 /* StepManager.m in Sources */,
 				CC4217E51EE79AF70022EF9A /* IJoinTableViewCell.m in Sources */,
@@ -986,11 +1024,13 @@
 				CCD88DCA1EE1464E00256015 /* BaseViewController.m in Sources */,
 				CC4218061EE7E47F0022EF9A /* GetMoneyRecordViewController.m in Sources */,
 				CCD88DD31EE1467800256015 /* MainViewController.m in Sources */,
+				CC92ECFC1F380D6300A63458 /* LoginViewController.m in Sources */,
 				CC4217E21EE79A970022EF9A /* IComeTableViewCell.m in Sources */,
 				CCD88DE91EE1489100256015 /* UIViewController+SlideMenuControllerOC.m in Sources */,
 				CC4217E81EE79B160022EF9A /* ISetUpTableViewCell.m in Sources */,
 				CCD88D901EE1404100256015 /* AppDelegate.m in Sources */,
 				CCD88DCC1EE1464E00256015 /* SmartTableViewCell.m in Sources */,
+				CC92ECFD1F380D6300A63458 /* RegistViewController.m in Sources */,
 				CC41218B1F2B1A19007A0DB3 /* UIViewController+WeChatAndAliPayMethod.m in Sources */,
 				CC361F571EF2740B002F2992 /* WatchMemberCell.m in Sources */,
 				CCD88DFB1EE155F600256015 /* StepModel.m in Sources */,
@@ -1161,6 +1201,8 @@
 			baseConfigurationReference = 2DA58F3B9A87A6C1364EA9E4 /* Pods-全民约步.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = ZEX7GKWE8Z;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1183,7 +1225,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chengwo.quanminyuebu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1192,6 +1236,8 @@
 			baseConfigurationReference = 9F9C0F4C6E3CA046A183773B /* Pods-全民约步.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = ZEX7GKWE8Z;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1214,7 +1260,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chengwo.quanminyuebu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

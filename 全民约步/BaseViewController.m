@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+#import "AppDelegate.h"
 #import "Config.h"
 //#import "TBCityIconFont.h"
 //#import "UIImage+TBCityIconFont.h"
@@ -65,87 +65,87 @@
     
 }
 
-//- (void) showMessage:(NSString*)message{
-////    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:message message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
-////    [alert show];
-////    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-////        [alert dismissWithClickedButtonIndex:alert.cancelButtonIndex animated:YES];
-////    });
-//    //第一种方法取Windows，通过数组取，如果不是只有一个那就不好用了
-//    //UIWindow * window = [UIApplication sharedApplication].windows.firstObject;
-//    
-//    //第二种方法取Windows，通过代理取
-//    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-//    UIWindow * window = appDelegate.window;
-//    
-//    UIView *showview =  [[UIView alloc]init];
-//    showview.backgroundColor = [UIColor grayColor];
-//    showview.alpha = 1.0f;
-//    showview.layer.cornerRadius = 5.0f;
-//    showview.layer.masksToBounds = YES;
-//    [window addSubview:showview];
-//    
-//    UILabel *label = [[UILabel alloc]init];
-//    CGRect rectSize = [message boundingRectWithSize:CGSizeMake(290, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17]} context:Nil];
-//    CGSize LabelSize = rectSize.size;
-//    label.frame = CGRectMake(10, 5, LabelSize.width, LabelSize.height);
-//    label.text = message;
-//    label.textColor = [UIColor whiteColor];
-//    label.textAlignment = 1;
-//    label.backgroundColor = [UIColor clearColor];
-//    label.font = [UIFont boldSystemFontOfSize:15];
-//    [showview addSubview:label];
-//    
-//    showview.frame = CGRectMake((SCREEN_WIDTH - LabelSize.width - 20)/2, SCREEN_HEIGHT/2, LabelSize.width+20, LabelSize.height+10);
-//    
-//    [UIView animateWithDuration:3 animations:^{
-//        showview.alpha = 0;
-//    }
-//                     completion:^(BOOL finished){
-//                         [showview removeFromSuperview];
-//                     }];
-//
-//}
-- (void)showMessage:(NSString*)message{
+- (void) showMessage:(NSString*)message{
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:message message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+//    [alert show];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [alert dismissWithClickedButtonIndex:alert.cancelButtonIndex animated:YES];
+//    });
+    //第一种方法取Windows，通过数组取，如果不是只有一个那就不好用了
+    //UIWindow * window = [UIApplication sharedApplication].windows.firstObject;
+    
+    //第二种方法取Windows，通过代理取
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    UIWindow * window = appDelegate.window;
+    
+    UIView *showview =  [[UIView alloc]init];
+    showview.backgroundColor = [UIColor grayColor];
+    showview.alpha = 1.0f;
+    showview.layer.cornerRadius = 5.0f;
+    showview.layer.masksToBounds = YES;
+    [window addSubview:showview];
+    
+    UILabel *label = [[UILabel alloc]init];
+    CGRect rectSize = [message boundingRectWithSize:CGSizeMake(290, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17]} context:Nil];
+    CGSize LabelSize = rectSize.size;
+    label.frame = CGRectMake(10, 5, LabelSize.width, LabelSize.height);
+    label.text = message;
+    label.textColor = [UIColor whiteColor];
+    label.textAlignment = 1;
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont boldSystemFontOfSize:15];
+    [showview addSubview:label];
+    
+    showview.frame = CGRectMake((SCREEN_WIDTH - LabelSize.width - 20)/2, SCREEN_HEIGHT/2, LabelSize.width+20, LabelSize.height+10);
+    
+    [UIView animateWithDuration:3 animations:^{
+        showview.alpha = 0;
+    }
+                     completion:^(BOOL finished){
+                         [showview removeFromSuperview];
+                     }];
 
-    _backGroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    //    _backGroundView.backgroundColor = [UIColor redColor];
-    [self.navigationController.view addSubview:_backGroundView];
-    
-    UITapGestureRecognizer *singelTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss:)];
-    [_backGroundView addGestureRecognizer:singelTap];
-    
-    _showView = [[UIView alloc]init];
-    _showView.backgroundColor = [getColor(@"e1f9ef")colorWithAlphaComponent:1];
-    _showView.layer.cornerRadius = 7;
-    [self.navigationController.view addSubview:_showView];
-    
-    UILabel *promptLabel = [[UILabel alloc]init];
-    promptLabel.text = message;
-    promptLabel.textAlignment = NSTextAlignmentCenter;
-    promptLabel.layer.masksToBounds = YES;
-    promptLabel.backgroundColor = [UIColor clearColor];
-    promptLabel.textColor = [UIColor blackColor];
-    promptLabel.font = DEF_FontSize_14;
-    promptLabel.numberOfLines = 0;
-    
-    CGSize labelsize = [message boundingRectWithSize:CGSizeMake(200, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:14],NSFontAttributeName, nil] context:nil].size;
-    
-    
-    promptLabel.frame = CGRectMake(25, 12.5, 200, labelsize.height);
-    _showView.frame = CGRectMake(0, 0, 250, labelsize.height+25);
-    _showView.center = self.navigationController.view.center;
-    
-    [_showView addSubview:promptLabel];
-    
-    [UIView animateWithDuration:2.0 animations:^{
-        _showView.alpha=0;
-    } completion:^(BOOL finished) {
-        [_showView removeFromSuperview];
-        [_backGroundView removeFromSuperview];
-        [_backGroundView removeGestureRecognizer:singelTap];
-    }];
 }
+//- (void)showMessage:(NSString*)message{
+//
+//    _backGroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+//    //    _backGroundView.backgroundColor = [UIColor redColor];
+//    [self.navigationController.view addSubview:_backGroundView];
+//    
+//    UITapGestureRecognizer *singelTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss:)];
+//    [_backGroundView addGestureRecognizer:singelTap];
+//    
+//    _showView = [[UIView alloc]init];
+//    _showView.backgroundColor = [getColor(@"e1f9ef")colorWithAlphaComponent:1];
+//    _showView.layer.cornerRadius = 7;
+//    [self.navigationController.view addSubview:_showView];
+//    
+//    UILabel *promptLabel = [[UILabel alloc]init];
+//    promptLabel.text = message;
+//    promptLabel.textAlignment = NSTextAlignmentCenter;
+//    promptLabel.layer.masksToBounds = YES;
+//    promptLabel.backgroundColor = [UIColor clearColor];
+//    promptLabel.textColor = [UIColor blackColor];
+//    promptLabel.font = DEF_FontSize_14;
+//    promptLabel.numberOfLines = 0;
+//    
+//    CGSize labelsize = [message boundingRectWithSize:CGSizeMake(200, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:14],NSFontAttributeName, nil] context:nil].size;
+//    
+//    
+//    promptLabel.frame = CGRectMake(25, 12.5, 200, labelsize.height);
+//    _showView.frame = CGRectMake(0, 0, 250, labelsize.height+25);
+//    _showView.center = self.navigationController.view.center;
+//    
+//    [_showView addSubview:promptLabel];
+//    
+//    [UIView animateWithDuration:2.0 animations:^{
+//        _showView.alpha=0;
+//    } completion:^(BOOL finished) {
+//        [_showView removeFromSuperview];
+//        [_backGroundView removeFromSuperview];
+//        [_backGroundView removeGestureRecognizer:singelTap];
+//    }];
+//}
 
 -(void)dismiss:(id)sender{
     

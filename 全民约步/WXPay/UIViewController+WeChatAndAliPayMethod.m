@@ -50,24 +50,24 @@
     NSLog(@"%@",signParams);
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noti:) name:@"weixin_pay_result" object:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"weixin_pay_result" object:nil userInfo:@{@"nonce_str":nonce_str}];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"weixin_pay_result" object:nil userInfo:@{@"nonce_str":nonce_str}];
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"WXCrowdfund" object:nil];
     [WXApi sendReq:req];
 
 }
 
-//微信付款成功失败
--(void)noti:(NSNotification *)noti{
-    NSLog(@"%@",noti);
-    if ([[noti object] isEqualToString:@"成功"]) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:WX_PAY_RESULT object:IS_SUCCESSED userInfo:@{@"nonce_str":noti.userInfo[@"nonce_str"]}];
-
-    }else{
-        [[NSNotificationCenter defaultCenter] postNotificationName:WX_PAY_RESULT object:IS_FAILED];
-    }
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"weixin_pay_result" object:nil];
-}
+////微信付款成功失败
+//-(void)noti:(NSNotification *)noti{
+//    NSLog(@"%@",noti);
+//    if ([[noti object] isEqualToString:@"成功"]) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:WX_PAY_RESULT object:IS_SUCCESSED userInfo:@{@"nonce_str":noti.userInfo[@"nonce_str"]}];
+//
+//    }else{
+//        [[NSNotificationCenter defaultCenter] postNotificationName:WX_PAY_RESULT object:IS_FAILED];
+//    }
+//    
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"weixin_pay_result" object:nil];
+//}
 
 
 
