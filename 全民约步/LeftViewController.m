@@ -130,7 +130,7 @@
     
     self.moneyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [headImageView addSubview:self.moneyBtn];
-    self.moneyBtn.frame = CGRectMake(250, 195, 80, 30);
+    self.moneyBtn.frame = CGRectMake(230, 195, 80, 30);
     [self.moneyBtn setTitle:@"提现" forState:UIControlStateNormal];
     [self.moneyBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [self.moneyBtn setBackgroundColor:[UIColor whiteColor]];
@@ -200,6 +200,7 @@
             {
                 [ShareSDK cancelAuthorize:SSDKPlatformTypeWechat];
                 [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_token"];
+                [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_type"];
                 [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_name"];
                 [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_money"];
                 [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_img"];
@@ -216,10 +217,23 @@
                 break;
         }
     }else{
-    
-        [self showMessage:@"请登录"];
+        if (indexPath.row == 5) {
+            [ShareSDK cancelAuthorize:SSDKPlatformTypeWechat];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_token"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_type"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_name"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_money"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_img"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"User_openid"];
+            [self showMessage:@"退出登录"];
+            [self.headImgView setBackgroundImage:[UIImage imageNamed:@"点击登录"] forState:UIControlStateNormal];
+            self.nameLabel.hidden = YES;
+            self.moneyLabel.hidden = YES;
+            //            self.headImgView.enabled = YES;
+        }else{
+            [self showMessage:@"请登录"];
+        }
     }
-    
 }
 
 #pragma mark - UITableViewDataSource
@@ -249,13 +263,108 @@
 
 -(void)moneyBtnClick:(id)send{
     
-    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"User_openid"]) {
+    if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"User_type"] isEqualToString:@"1"]) {
         GetMoneyViewController *vc = [[GetMoneyViewController alloc]init];
         vc.delegate = self;
         [self.slideMenuController changeMainViewController:[[UINavigationController alloc] initWithRootViewController: vc] close:YES];
     }else{
     
-        [self showMessage:@"请绑定微信提现"];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"请绑定微信提现"
+                                                                                 message:@"绑定成功后，只能使用微信登录"
+                                                                          preferredStyle:UIAlertControllerStyleAlert ];
+        
+        //添加取消到UIAlertController中
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:cancelAction];
+        
+        //添加确定到UIAlertController中
+        UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"weixin://"]]) {
+                //登录
+                [ShareSDK getUserInfo:SSDKPlatformTypeWechat
+                       onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error)
+                 {
+                     if (state == SSDKResponseStateSuccess)
+                     {
+                         
+                         NSLog(@"uid=%@",[user.credential.rawData objectForKey:@"access_token"]);
+                         NSLog(@"%@",[user.credential.rawData objectForKey:@"unionid"]);
+                         NSLog(@"token=%@",[user.credential.rawData objectForKey:@"openid"]);
+                         
+                         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+                         
+                         manager.responseSerializer = [AFJSONResponseSerializer serializer];
+                         
+                         manager.requestSerializer=[AFHTTPRequestSerializer serializer];
+                         // 拼接请求参数
+                         NSDictionary *params = @{@"access_token":[user.credential.rawData objectForKey:@"access_token"],@"unionid":[user.credential.rawData objectForKey:@"unionid"],@"openid":[user.credential.rawData objectForKey:@"openid"],
+                                                  @"token":[[NSUserDefaults standardUserDefaults] valueForKey:@"User_token"]};
+                         
+                         [manager POST:@"http://yuebu.tcgqxx.com/api/user/boundweixin" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                             NSLog(@"%@",responseObject);
+            
+                             [self.headImgView sd_setBackgroundImageWithURL:[[responseObject objectForKey:@"data"] objectForKey:@"headimgurl"] forState:UIControlStateNormal];
+                             self.nameLabel.text = [[responseObject objectForKey:@"data"] objectForKey:@"nickname"];
+            
+                             [[NSUserDefaults standardUserDefaults] setObject:[[responseObject objectForKey:@"data"] objectForKey:@"nickname"] forKey:@"User_name"];
+                             
+                             [[NSUserDefaults standardUserDefaults] setObject:[responseObject objectForKey:@"token"] forKey:@"User_token"];
+                             
+                             [[NSUserDefaults standardUserDefaults] setObject:[user.credential.rawData objectForKey:@"openid"] forKey:@"User_openid"];
+                             
+//                             [[NSUserDefaults standardUserDefaults] setObject:[[responseObject objectForKey:@"data"] objectForKey:@"money"] forKey:@"User_money"];
+                             
+                             [[NSUserDefaults standardUserDefaults] setObject:[[responseObject objectForKey:@"data"] objectForKey:@"headimgurl"] forKey:@"User_img"];
+                             
+                             
+                             AFHTTPSessionManager *manager2 = [AFHTTPSessionManager manager];
+                             
+                             manager2.responseSerializer = [AFJSONResponseSerializer serializer];
+                             
+                             manager2.requestSerializer=[AFHTTPRequestSerializer serializer];
+                             // 拼接请求参数
+                             
+                             NSDictionary *params2 = @{@"token":[[NSUserDefaults standardUserDefaults] valueForKey:@"User_token"]};
+                             
+                             [manager2 POST:@"http://yuebu.tcgqxx.com/api/user/userinfo" parameters:params2 progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                 self.moneyLabel.text = [NSString stringWithFormat:@"%@元",[[responseObject objectForKey:@"result"] objectForKey:@"money"]];
+                                 [[NSUserDefaults standardUserDefaults] setObject:[[responseObject objectForKey:@"result"] objectForKey:@"money"] forKey:@"User_money"];
+                                 
+                                 self.nameLabel.text = [NSString stringWithFormat:@"%@",[[responseObject objectForKey:@"result"] objectForKey:@"nick_name"]];
+                                 
+                                 if ([[NSUserDefaults standardUserDefaults] valueForKey:@"User_name"]) {
+                                     self.nameLabel.hidden = NO;
+                                 }
+                                 
+                                 if ([[NSUserDefaults standardUserDefaults] valueForKey:@"User_money"]) {
+                                     self.moneyLabel.hidden = NO;
+                                 }
+                                 
+                                 [self.headImgView sd_setBackgroundImageWithURL:[[NSUserDefaults standardUserDefaults] valueForKey:@"User_img"] forState:UIControlStateNormal];
+                                 
+                             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                 
+                             }];
+                             
+                         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                             NSLog(@"%@",error);
+                         }];
+                     }
+                     
+                     else
+                     {
+                         NSLog(@"%@",error);
+                     }
+                     
+                 }];
+            }else{
+            
+                [self showMessage:@"设备中并未安装微信"];
+            }
+        }];
+        [alertController addAction:OKAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
     }
 }
 
@@ -294,6 +403,8 @@
                          self.moneyLabel.hidden = NO;
                          //                     self.headImgView.enabled = NO;
                          [[NSUserDefaults standardUserDefaults] setObject:[[responseObject objectForKey:@"data"] objectForKey:@"nick_name"] forKey:@"User_name"];
+                         
+                         [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"User_type"];
                          
                          [[NSUserDefaults standardUserDefaults] setObject:[responseObject objectForKey:@"token"] forKey:@"User_token"];
                          

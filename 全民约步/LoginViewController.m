@@ -122,7 +122,7 @@
             [[NSUserDefaults standardUserDefaults] setObject:[[responseObject objectForKey:@"data"] objectForKey:@"nick_name"] forKey:@"User_name"];
             
             [[NSUserDefaults standardUserDefaults] setObject:[responseObject objectForKey:@"token"] forKey:@"User_token"];
-            
+            [[NSUserDefaults standardUserDefaults] setObject:@"2" forKey:@"User_type"];
             
             [[NSUserDefaults standardUserDefaults] setObject:[[responseObject objectForKey:@"data"] objectForKey:@"money"] forKey:@"User_money"];
             

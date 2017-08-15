@@ -198,7 +198,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/OpenRedPacketViewController.m"
@@ -729,22 +729,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/MainViewController.m"
-            timestampString = "523423551.564067"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
-            landmarkName = "-mapView:didUpdateUserLocation:updatingLocation:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
             timestampString = "523790384.257747"
             startingColumnNumber = "9223372036854775807"
@@ -769,22 +753,68 @@
             endingLineNumber = "411"
             landmarkName = "-noti:"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/LoginViewController.m"
-            timestampString = "523784688.184306"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "-sendBtnClick:"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[sendRedPacketViewController noti:]_block_invoke.356"
+                  moduleName = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangqi/Desktop/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/sendRedPacketViewController.m"
+                  timestampString = "524394044.035927"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "415"
+                  endingLineNumber = "415"
+                  offsetFromSymbolStart = "548">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.360"
+                  moduleName = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangqi/Desktop/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/sendRedPacketViewController.m"
+                  timestampString = "524394044.038184"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "415"
+                  endingLineNumber = "415"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.361"
+                  moduleName = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangqi/Desktop/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/sendRedPacketViewController.m"
+                  timestampString = "524394044.040283"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "415"
+                  endingLineNumber = "415"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[sendRedPacketViewController noti:]_block_invoke.363"
+                  moduleName = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangqi/Desktop/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/sendRedPacketViewController.m"
+                  timestampString = "524394044.042386"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "416"
+                  endingLineNumber = "416"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -838,31 +868,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
-            timestampString = "523790384.257747"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "350"
-            endingLineNumber = "350"
-            landmarkName = "-sendBtnClick:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/LeftViewController.m"
-            timestampString = "523789712.010205"
+            timestampString = "524384655.826182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "-moneyBtnClick:"
             landmarkType = "7">
          </BreakpointContent>
@@ -870,15 +884,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/LeftViewController.m"
-            timestampString = "523789713.263548"
+            timestampString = "524394436.801338"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
+            startingLineNumber = "367"
+            endingLineNumber = "367"
             landmarkName = "-moneyBtnClick:"
             landmarkType = "7">
          </BreakpointContent>
@@ -897,6 +911,182 @@
             endingLineNumber = "322"
             landmarkName = "-sendBtnClick:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/LeftViewController.m"
+            timestampString = "524394436.801338"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "389"
+            endingLineNumber = "389"
+            landmarkName = "-loginClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
+            timestampString = "524136479.830422"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
+            landmarkName = "-sendBtnClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
+            timestampString = "524136490.4138"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "348"
+            endingLineNumber = "348"
+            landmarkName = "-sendBtnClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/LeftViewController.m"
+            timestampString = "524394436.801338"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "374"
+            endingLineNumber = "374"
+            landmarkName = "-loginClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/LeftViewController.m"
+            timestampString = "524390462.632901"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
+            landmarkName = "-moneyBtnClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/LeftViewController.m"
+            timestampString = "524394436.801338"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "350"
+            endingLineNumber = "350"
+            landmarkName = "-moneyBtnClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/LeftViewController.m"
+            timestampString = "524391005.830062"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
+            landmarkName = "-moneyBtnClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/LeftViewController.m"
+            timestampString = "524391270.626985"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
+            landmarkName = "-moneyBtnClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/LeftViewController.m"
+            timestampString = "524392810.732588"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
+            landmarkName = "-moneyBtnClick:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[LeftViewController moneyBtnClick:]_block_invoke_2"
+                  moduleName = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangqi/Desktop/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/LeftViewController.m"
+                  timestampString = "524394044.094296"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "303"
+                  endingLineNumber = "303"
+                  offsetFromSymbolStart = "1564">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[LeftViewController moneyBtnClick:]_block_invoke_3"
+                  moduleName = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangqi/Desktop/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/LeftViewController.m"
+                  timestampString = "524394044.09622"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "303"
+                  endingLineNumber = "303"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

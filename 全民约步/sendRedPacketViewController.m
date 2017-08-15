@@ -331,15 +331,15 @@
                         });
                     }else{
                         self.sendBtn.enabled = YES;
-                        //UIAlertController风格：UIAlertControllerStyleAlert
-                        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"没有标题的标题"
-                                                                                                 message:[responseObject objectForKey:@"msg"]
-                                                                                          preferredStyle:UIAlertControllerStyleAlert ];
-                        
-                        UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-                        [alertController addAction:OKAction];
-                        
-                        [self presentViewController:alertController animated:YES completion:nil];
+//                        //UIAlertController风格：UIAlertControllerStyleAlert
+//                        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"没有标题的标题"
+//                                                                                                 message:[responseObject objectForKey:@"msg"]
+//                                                                                          preferredStyle:UIAlertControllerStyleAlert ];
+//                        
+//                        UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+//                        [alertController addAction:OKAction];
+//                        
+//                        [self presentViewController:alertController animated:YES completion:nil];
                         
                     }
                     
@@ -387,7 +387,7 @@
     
         } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             NSLog(@"%@",responseObject);
-            
+            [self showMessage:[responseObject objectForKey:@"msg"]];
             if ([[responseObject objectForKey:@"status"] integerValue]== 1) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
@@ -400,14 +400,14 @@
             }else{
                 self.sendBtn.enabled = YES;
                 //UIAlertController风格：UIAlertControllerStyleAlert
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"没有标题的标题"
-                                                                                         message:[responseObject objectForKey:@"msg"]
-                                                                                  preferredStyle:UIAlertControllerStyleAlert ];
-                
-                UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-                [alertController addAction:OKAction];
-                
-                [self presentViewController:alertController animated:YES completion:nil];
+//                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"没有标题的标题"
+//                                                                                         message:[responseObject objectForKey:@"msg"]
+//                                                                                  preferredStyle:UIAlertControllerStyleAlert ];
+//                
+//                UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+//                [alertController addAction:OKAction];
+//                
+//                [self presentViewController:alertController animated:YES completion:nil];
         
             }
             
