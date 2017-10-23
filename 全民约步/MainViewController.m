@@ -43,7 +43,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
+ [self.navigationController setNavigationBarHidden:YES animated:NO];
      [self.slideMenuController addLeftGestures];
     if ([[NSUserDefaults standardUserDefaults] valueForKey:@"User_img"]) {
      
@@ -51,8 +51,10 @@
     }
 }
 
+
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
     [self.slideMenuController removeLeftGestures];
 //    [timer invalidate];   // 将定时器从运行循环中移除，
 //    timer = nil;
@@ -67,6 +69,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIView *headView = [[UIView alloc]init];
+    [self.view addSubview:headView];
+    headView.frame = CGRectMake(0, 0, SCREENWIGTH, 64);
+    headView.backgroundColor = getColor(@"44464e");
+    
+    
     self.pointArr = [[NSMutableArray alloc]init];
     self.locationManager = [AFHTTPSessionManager manager];
     
@@ -75,25 +83,32 @@
     self.locationManager.requestSerializer=[AFHTTPRequestSerializer serializer];
     
     self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.leftButton.frame = CGRectMake(0, 0, 40, 40);
+    self.leftButton.frame = CGRectMake(10, 20, 40, 40);
     [self.leftButton setImage:[UIImage imageNamed:@"点击登录"] forState:UIControlStateNormal];
     [self.leftButton addTarget:self action:@selector(toggleLeft) forControlEvents:UIControlEventTouchUpInside];
     self.leftButton.layer.masksToBounds = YES;
     self.leftButton.layer.cornerRadius = 20;
-    UIBarButtonItem *Button1 = [[UIBarButtonItem alloc]initWithCustomView:self.leftButton];
-    self.navigationItem.leftBarButtonItem = Button1;
+    [headView addSubview:self.leftButton];
+    
+    UILabel  *nameLabel = [[UILabel alloc]init];
+    [headView addSubview:nameLabel];
+    nameLabel.frame = CGRectMake(0, 30, SCREENWIGTH, 20);
+    nameLabel.textAlignment = NSTextAlignmentCenter;
+    nameLabel.textColor = [UIColor whiteColor];
+    nameLabel.text = @"一起约步";
+    nameLabel.font = DEF_FontSize_18;
+
     
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.rightButton.frame = CGRectMake(0, 20, 110, 40);
+    self.rightButton.frame = CGRectMake(SCREENWIGTH - 110, 20, 110, 40);
     
     [self.rightButton setImage:[UIImage imageNamed:@"步数"] forState:UIControlStateNormal];
     [self.rightButton setTitle:@"0步" forState:UIControlStateNormal];
     [self.rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     //    [rightButton addTarget:self action:@selector(toggleLeft) forControlEvents:UIControlEventTouchUpInside];
     [self initButton:self.rightButton];
-    UIBarButtonItem *Button = [[UIBarButtonItem alloc]initWithCustomView:self.rightButton];
-    self.navigationItem.rightBarButtonItem = Button;
-    self.title = @"全民约步";
+    [headView addSubview:self.rightButton];
+   
     [self startTime];
     [self setMapView];
     [self setBtn];
@@ -103,7 +118,7 @@
 -(void)setMapView
 {
     
-    _mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
+    _mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
     _mapView.delegate = self;
     _mapView.showsUserLocation = YES;    //YES 为打开定位，NO为关闭定位
     _mapView.showTraffic = YES;
@@ -125,7 +140,7 @@
     
     self.gpsButton = [self makeGPSButtonView];
     self.gpsButton.center = CGPointMake(CGRectGetMidX(self.gpsButton.bounds) + 10,
-                                        self.view.bounds.size.height -  CGRectGetMidY(self.gpsButton.bounds) - 84);
+                                        self.view.bounds.size.height -  CGRectGetMidY(self.gpsButton.bounds) - 84+64);
     [self.view addSubview:self.gpsButton];
     
     
@@ -135,7 +150,7 @@
 
     self.openRedPacketBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:self.openRedPacketBtn];
-    self.openRedPacketBtn.frame = CGRectMake(SCREENWIGTH - 120, SCREENHEIGHT - 200, 100, 40);
+    self.openRedPacketBtn.frame = CGRectMake(SCREENWIGTH - 120, SCREENHEIGHT - 200 + 64, 100, 40);
     [self.openRedPacketBtn setTitle:@"开红包" forState:UIControlStateNormal];
     [self.openRedPacketBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.openRedPacketBtn setBackgroundColor:getColor(@"de524e")];
@@ -145,7 +160,7 @@
     
     self.putInRedPacketBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:self.putInRedPacketBtn];
-    self.putInRedPacketBtn.frame = CGRectMake(SCREENWIGTH - 120, SCREENHEIGHT - 260, 100, 40);
+    self.putInRedPacketBtn.frame = CGRectMake(SCREENWIGTH - 120, SCREENHEIGHT - 260 + 64, 100, 40);
     [self.putInRedPacketBtn setTitle:@"埋红包" forState:UIControlStateNormal];
     [self.putInRedPacketBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.putInRedPacketBtn setBackgroundColor:getColor(@"de524e")];

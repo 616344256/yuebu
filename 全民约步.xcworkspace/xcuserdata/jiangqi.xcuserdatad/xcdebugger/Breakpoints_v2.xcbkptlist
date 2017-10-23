@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
-            timestampString = "523790384.257747"
+            timestampString = "527737809.194112"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "452"
@@ -474,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/MainViewController.m"
-            timestampString = "520163210.853655"
+            timestampString = "527746925.501793"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "-mapView:didUpdateUserLocation:updatingLocation:"
             landmarkType = "7">
          </BreakpointContent>
@@ -538,7 +538,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
-            timestampString = "523790384.257747"
+            timestampString = "527737809.195883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "456"
@@ -554,7 +554,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
-            timestampString = "523790384.257747"
+            timestampString = "527737809.197019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "354"
@@ -650,7 +650,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
-            timestampString = "523186969.236505"
+            timestampString = "527737809.198116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "214"
@@ -666,7 +666,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
-            timestampString = "523790384.257747"
+            timestampString = "527737809.199044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "389"
@@ -714,7 +714,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
-            timestampString = "523790384.257747"
+            timestampString = "527737809.199985"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "416"
@@ -730,7 +730,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
-            timestampString = "523790384.257747"
+            timestampString = "527737809.200877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "420"
@@ -746,7 +746,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
-            timestampString = "523790384.257747"
+            timestampString = "527737809.201766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "411"
@@ -762,42 +762,12 @@
                   moduleName = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jiangqi/Desktop/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/sendRedPacketViewController.m"
-                  timestampString = "524394044.035927"
+                  timestampString = "527743108.586753"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "415"
                   endingLineNumber = "415"
-                  offsetFromSymbolStart = "548">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_.360"
-                  moduleName = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiangqi/Desktop/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/sendRedPacketViewController.m"
-                  timestampString = "524394044.038184"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "415"
-                  endingLineNumber = "415"
-                  offsetFromSymbolStart = "64">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.361"
-                  moduleName = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiangqi/Desktop/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/sendRedPacketViewController.m"
-                  timestampString = "524394044.040283"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "415"
-                  endingLineNumber = "415"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "288">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -807,12 +777,12 @@
                   moduleName = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jiangqi/Desktop/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/sendRedPacketViewController.m"
-                  timestampString = "524394044.042386"
+                  timestampString = "527743108.591935"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "416"
                   endingLineNumber = "416"
-                  offsetFromSymbolStart = "80">
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -904,7 +874,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
-            timestampString = "523790459.130131"
+            timestampString = "527737809.20282"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "322"
@@ -916,7 +886,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/LeftViewController.m"
@@ -936,7 +906,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
-            timestampString = "524136479.830422"
+            timestampString = "527737809.203745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "321"
@@ -952,28 +922,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
-            timestampString = "524136490.4138"
+            timestampString = "527737809.204641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "348"
             endingLineNumber = "348"
             landmarkName = "-sendBtnClick:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/LeftViewController.m"
-            timestampString = "524394436.801338"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "374"
-            endingLineNumber = "374"
-            landmarkName = "-loginClick:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1064,12 +1018,12 @@
                   moduleName = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jiangqi/Desktop/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/LeftViewController.m"
-                  timestampString = "524394044.094296"
+                  timestampString = "527743108.687776"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "303"
                   endingLineNumber = "303"
-                  offsetFromSymbolStart = "1564">
+                  offsetFromSymbolStart = "1056">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1079,14 +1033,78 @@
                   moduleName = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jiangqi/Desktop/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/LeftViewController.m"
-                  timestampString = "524394044.09622"
+                  timestampString = "527743108.693622"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "303"
-                  endingLineNumber = "303"
-                  offsetFromSymbolStart = "24">
+                  startingLineNumber = "304"
+                  endingLineNumber = "304"
+                  offsetFromSymbolStart = "64">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
+            timestampString = "527737809.205868"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "449"
+            endingLineNumber = "449"
+            landmarkName = "-locateAction"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[sendRedPacketViewController locateAction]"
+                  moduleName = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangqi/Desktop/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/sendRedPacketViewController.m"
+                  timestampString = "527743108.702764"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "449"
+                  endingLineNumber = "449"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[sendRedPacketViewController locateAction]_block_invoke"
+                  moduleName = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiangqi/Desktop/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/%E5%85%A8%E6%B0%91%E7%BA%A6%E6%AD%A5/sendRedPacketViewController.m"
+                  timestampString = "527743108.7054"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "453"
+                  endingLineNumber = "453"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5168;&#x6c11;&#x7ea6;&#x6b65;/sendRedPacketViewController.m"
+            timestampString = "527737809.206772"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "446"
+            endingLineNumber = "446"
+            landmarkName = "-locateAction"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
